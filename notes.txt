@@ -1,0 +1,5 @@
+1. A problem that i faced by , data returned by fetch call for the line graph was in form of object , where the properties were dates and value was the no of cases , so in use state function I was using forEach function which is only aplicable over  an array , so i had to use for(let date in data.cases) instead of forEach
+2. Another bug that i faced was that , of the Line Component , since the data that we passed was received from an asynchronous fetch call , so at the time of loading the page , their would be no data , so i needed to use shortcircuiting i.e {data?.length>0 && Line}
+3. leaflet error -> i couldnt find the proper documentation for my bug so after refering to many sources , i found out that we need to do couple more steps to show the map on the screen , and those were not actually in their documentation , we need to pass url prop and attribution 
+and then in our app.js we need to import their css file which ll set all the stylying for the map , then finally after this also we wouldnt seeanything .
+so , the leaflet Component actually adds an additional div Component into our file , so we need to set height of that Component inorder to see the map.
